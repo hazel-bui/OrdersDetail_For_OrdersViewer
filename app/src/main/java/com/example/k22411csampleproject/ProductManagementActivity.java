@@ -1,18 +1,13 @@
 package com.example.k22411csampleproject;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -85,33 +80,5 @@ public class ProductManagementActivity extends AppCompatActivity {
         adapterProduct=new ArrayAdapter<>(
                 ProductManagementActivity.this, android.R.layout.simple_list_item_1);
         lvProduct.setAdapter(adapterProduct);
-    }
-    public <Menu> boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.option_menu_product, (android.view.Menu) menu);
-        return true;
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_new_product:
-                Toast.makeText(this, "New Product clicked", Toast.LENGTH_SHORT).show();
-                // TODO: Mở form tạo mới sản phẩm hoặc xử lý logic khác
-                return true;
-
-            case R.id.menu_manage_categories:
-                Toast.makeText(this, "Manage Category", Toast.LENGTH_SHORT).show();
-                // TODO: Xử lý quảng cáo
-                return true;
-
-            case R.id.menu_help:
-                Toast.makeText(this, "Help clicked", Toast.LENGTH_SHORT).show();
-                // TODO: Hiển thị trợ giúp
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 }
